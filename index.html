@@ -307,40 +307,28 @@ https://www.tooplate.com/view/2120-ben-resume
         <div class="row">
 
           <div class="col-lg-6 col-md-6 col-12">
-            <form action="#" method="get" class="contact-form webform"  role="form">
+            <form id="contact-form" method="get" class="contact-form webform"  role="form">
 
                 <div class="form-group d-flex flex-column-reverse">
-                    <input type="text" class="form-control" name="cf-name" id="cf-name" placeholder="Your Name">
+                    <input type="text" class="form-control" name="user_name" id="cf-name" placeholder="Your Name">
 
                     <label for="cf-name" class="webform-label">Full Name</label>
                 </div>
 
                 <div class="form-group d-flex flex-column-reverse">
-                    <input type="email" class="form-control" name="cf-email" id="cf-email" placeholder="Your Email">
+                    <input type="email" class="form-control" name="user_email" id="cf-email" placeholder="Your Email">
 
                     <label for="cf-email" class="webform-label">Your Email</label>
                 </div>
 
                 <div class="form-group d-flex flex-column-reverse">
-                    <textarea class="form-control" rows="5" name="cf-message" id="cf-message" placeholder="Your Message"></textarea>
+                    <textarea class="form-control" rows="5" name="message" id="cf-message" placeholder="Your Message"></textarea>
 
                     <label for="cf-message" class="webform-label">Message</label>
                 </div>
 
-                <button type="submit" class="form-control" id="submit-button" name="submit">Send</button>
+                <button type="submit" value="Send" class="form-control" id="submit-button" name="submit">Send</button>
             </form>
-
-              <form id="contact-form">
-                  <label>
-                      <input type="email" name="user_email">
-                  </label>
-                  <label>
-                      <textarea name="message"></textarea>
-                  </label>
-                  <button type="submit">Send</button>
-              </form>
-
-          </div>
 
             <div class="mx-auto col-lg-4 col-md-6 col-12">
                 <h3 class="my-4 pt-4 pt-lg-0">Say hello</h3>
@@ -376,19 +364,28 @@ https://www.tooplate.com/view/2120-ben-resume
      <script src="js/smoothscroll.js"></script>
      <script src="js/owl.carousel.min.js"></script>
      <script src="js/custom.js"></script>
-    <script type="text/javascript"
-            src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-        emailjs.init("bQq2WSY_vuntziWwH");
-        document.getElementById('contact-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            emailjs.sendForm('service_r6jjw9c', 'template_kd1ds16', this)
-                .then(function() {
-                    alert('Email sent successfully!');
-                }, function(error) {
-                    alert('Failed to send email: ' + error);
-                });
-        });
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init({
+                publicKey: "ZaInXNvXfQOYcsTaK",
+            });
+        })();
     </script>
-
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // these IDs from the previous steps
+                emailjs.sendForm('service_r6jjw9c', 'template_nkep4b8', this)
+                    .then(() => {
+                        console.log('SUCCESS!');
+                    }, (error) => {
+                        console.log('FAILED...', error);
+                    });
+            });
+        }
+    </script>
 </body>
 </html>
