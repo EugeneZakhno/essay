@@ -40,20 +40,21 @@ https://www.tooplate.com/view/2120-ben-resume
 
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
+
                     <li class="nav-item">
-                        <a href="#intro" class="nav-link smoothScroll">Introduction</a>
+                        <a href="#intro" style="color: yellow;" class="nav-link smoothScroll">Introduction</a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="#about" class="nav-link smoothScroll">About Me</a>
+                        <a href="#about" style="color: yellow;" class="nav-link smoothScroll">About Me</a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="#testimonials" class="nav-link smoothScroll">Reviews</a>
+                        <a href="#testimonials" style="color: yellow;" class="nav-link smoothScroll">Reviews</a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="#contact"  class="nav-link smoothScroll">Contact</a>
+                        <a href="#contact"  style="color: yellow;" class="nav-link smoothScroll">Contact</a>
                     </li>
                 </ul>
 
@@ -317,13 +318,13 @@ https://www.tooplate.com/view/2120-ben-resume
                                 </div> -->
                 <p>Send me a letter:</p>
                 <div class="form-group d-flex flex-column-reverse">
-                    <textarea color="gray" class="form-control" rows="1" name="message" id="message" placeholder="Your name">My name is  </textarea>
+                    <textarea class="form-control" rows="1" name="message" id="message" placeholder="Your name">My name is  </textarea>
                 </div>
                 <div class="form-group d-flex flex-column-reverse">
-                    <textarea color="gray" class="form-control" rows="1" name="message" id="message" placeholder="Your Email">From: email </textarea>
+                    <textarea  class="form-control" rows="1" name="message" id="message" placeholder="Your Email">From: email </textarea>
                 </div>
                 <div class="form-group d-flex flex-column-reverse">
-                    <textarea color="gray" class="form-control" rows="5" name="message" id="message" >Your text message: </textarea>
+                    <textarea class="form-control" rows="5" name="message" id="message" >Your text message: </textarea>
                 </div>
                 <div id="success-message" style="color: green;"></div>
                 <div id="error-message" style="color: red;"></div>
@@ -378,10 +379,10 @@ https://www.tooplate.com/view/2120-ben-resume
                 emailjs.sendForm('service_r6jjw9c', 'template_nkep4b8', this)
                     .then(() => {
                         console.log('SUCCESS!');
-                        document.getElementById('success-message').innerText = 'Your message has been sent successfully!';
+                        document.getElementById('success-message').innerText = 'Successfully.';
                     }, (error) => {
                         console.log('FAILED...', error);
-                        document.getElementById('error-message').innerText = 'There was an error sending your message.';
+                        document.getElementById('error-message').innerText = 'Failed.';
                     });
             });
         }
